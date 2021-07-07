@@ -1,0 +1,330 @@
+@use 'colors';
+@use 'typography';
+
+
+%font-base {
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: colors.$greyish-brown-font;
+}
+
+.cms-header {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 20px;
+  position: relative;
+  &__img {
+    width: 100vw;
+  }
+  &__text {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    top: 10vw;
+  }
+  &__page-name,
+  &__page-description {
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: colors.$greyish-brown-font;
+    text-align: center;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__page-name {
+    font-size: 36px;
+    font-family: Brother-1816, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.22;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__page-description {
+    line-height: 1.25;
+  }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.group {
+  &--fullwidth-bg {
+    width: 100vw;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px 15px 19px;
+    background: rgb(251,251,251);
+    background: linear-gradient(180deg, rgba(251,251,251,1) 80%, rgba(246,246,246,0) 100%);
+  }
+  &__title {
+    @extend %font-base;
+    margin: 30px 15px 20px;
+    font-family: Brother-1816;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    &--capitalize {
+      text-transform: capitalize;
+    }
+  }
+  &__content {
+
+  }
+}
+.page-text {
+  @extend %font-base;
+  font-family: typography.$font__text;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  &__link {
+    color: colors.$mid-blue;
+    text-decoration: underline;
+  }
+}
+
+.benefit-banner {
+  margin: 0 5px 20px;
+  padding: 15px;
+  border: solid 3px #f6f6f6;
+  background-color: #ffffff;
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.bulletpoints {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.bulletpoint {
+  text-align: center;
+  margin-top: 15px;
+  &:last-of-type {
+    width: 100%;
+  }
+  &__text {
+    @extend %font-base;
+    display: inline-block;
+    padding-left: 5px;
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;    
+  }
+}
+
+.footnote {
+  font-family: Lato;
+  @extend %font-base;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.33;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 40px auto;
+  gap: 7px 15px;
+  margin-bottom: 25px;
+  &__image {
+    width: 42px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+  }
+  &__name,
+  &__description {
+    @extend %font-base;
+    grid-column-start: 2;
+    margin: 0 0 7px;
+    font-family: Lato;
+    font-size: 16px;
+  }
+  &__name {
+    font-weight: bold;
+    line-height: 1;
+  }
+  &__description {
+    font-weight: normal;
+    line-height: 1.25;
+  }
+  &__banner-image {
+    display: block;
+    margin: auto;
+  }
+}
+
+.bulletpoint-list {
+  padding-left: 20px;
+  &__item {
+    @extend %font-base;
+    font-family: Lato, sans-serif;
+    list-style: initial;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  .faq-item__header,
+  .faq-item__content {
+    @extend %font-base;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    position: relative;
+    padding-left: 25px;
+  }
+  .faq-item__header {
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  .faq-item__content {
+    line-height: 1.5;
+  }
+  .faq-item__qa {
+    font: inherit;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .faq-item__content {
+    height: 0;
+    overflow: hidden;
+    &.expanded {
+      height: auto;
+    }
+  }
+}
+
+.faq-link {
+  @extend %font-base;
+  font-size: inherit;
+  line-height: inherit;
+  color: colors.$mid-blue;
+  text-decoration: underline;
+  &:hover,
+  &:active {
+    color: colors.$mid-blue;
+  }
+  &--read-more {
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: underline;
+    line-height: 1.25;
+    margin: 30px auto;
+    text-align: center;
+    &:hover,
+    &:active {
+      color: colors.$mid-blue;
+    }
+  }
+}
+
+.shop-now {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__link {
+    display: block;
+  }
+  &__tile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  &__text {
+    @extend %font-base;
+    display: inline-block;
+    margin-top: 10px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    text-decoration: underline;
+    color: colors.$mid-blue;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .cms-header {
+    margin: 0 0 30px 0;
+    &__text {
+      top: 92px;
+    }
+    &__page-description {
+      width: 400px;
+    }
+    &__img {
+      width: 100%;
+    }
+  }
+  .group {
+    &--fullwidth-bg {
+      width: 100%;
+      margin: 0;
+    }
+    &__content {
+      width: 600px;
+      margin: 0 auto;
+    }
+    &__content--faq {
+      width: auto;
+      margin: 10px 45px 40px;
+    }
+    &__title {
+      &--capitalize {
+        width: 445px;
+        margin: 30px auto 13px;
+      }
+    }
+  }
+  .benefit-banner {
+    width: 445px;
+    margin: auto;
+  }
+  .footnote {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .features-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &--with-banner {
+      grid-template-rows: auto;
+      margin-top: 20px;
+      .feature:first-of-type {
+        padding-top: 12px;
+      }
+    }
+  }
+  .feature__banner {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 5;
+  }
+  .faq-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
