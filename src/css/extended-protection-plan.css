@@ -7,8 +7,8 @@
 }
 
 .cms-header {
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -15px;
+  margin-right: -15px;
   margin-bottom: 20px;
   position: relative;
 }
@@ -250,6 +250,9 @@
   }
   .cms-header__text {
     top: 92px;
+  }
+  .cms-header__page-name {
+    width: 650px;
   }
   .cms-header__page-description {
     width: 400px;
